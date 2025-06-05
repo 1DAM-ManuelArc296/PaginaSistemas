@@ -25,7 +25,6 @@ function generarNav(){
         if (value.includes(nombreHtml)){
             // Estamos en esta pagina, ponerla a disabled
             li.className = "disabled";
-            a.href = "";
         }
         else{
             a.href = value;
