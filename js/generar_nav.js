@@ -7,6 +7,7 @@ function generarNav(){
     }
 
     var nombreHtml = location.pathname.split("/").slice(-1);
+    alert("Nombre del ficherito: " + nombreHtml);
 
     // Genera titulo
     let titulo = document.createElement("h1")
