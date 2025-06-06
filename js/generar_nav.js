@@ -6,14 +6,26 @@ function generarNav(){
         return;
     }
 
-    var nombreHtml = location.pathname.split("/").slice(-1);
+    var nombreHtml = document.body.id.toLowerCase();//location.pathname.split("/").slice(-1);
     //alert("Nombre del ficherito: " + nombreHtml);
     //alert("Pathname: " + location.pathname);
 
     // Genera titulo
+    let divcontenedor = document.createElement('div');
+    divcontenedor.style.display = "flex";
+    divcontenedor.style.justifyContent = "center";
     let titulo = document.createElement("h1")
     titulo.textContent = nombreEmpresa;
-    header.appendChild(titulo)
+    let img = document.createElement("img");
+    img.src = bigiconpath;
+    img.style.position = "relative";
+    img.style.width = "88px";
+    img.style.marginRight = "20px";
+    //header.appendChild(img);
+    //header.appendChild(titulo);
+    divcontenedor.appendChild(img);
+    divcontenedor.appendChild(titulo);
+    header.appendChild(divcontenedor);
 
     // Genera nav y UL
     let navi = document.createElement("nav");
@@ -24,7 +36,7 @@ function generarNav(){
         let li = document.createElement("li");
         let a = document.createElement("a");
         a.textContent = key;
-        if (value.includes(nombreHtml)){
+        if (value.toLowerCase().includes(nombreHtml)){
             // Estamos en esta pagina, ponerla a disabled
             li.className = "disabled";
         }
@@ -40,4 +52,17 @@ function generarNav(){
     header.appendChild(navi)
 }
 
+function ponDatos(){
+    let nombresEmpresa = document.querySelectorAll('[nombreEmpresa]');
+    let sloganesEmpresa = document.querySelectorAll('[sloganEmpresa]');
+    nombresEmpresa.forEach(element => {
+        element.textContent = nombreEmpresa;
+    });
+    sloganesEmpresa.forEach(element => {
+        element.textContent = sloganEmpresa;
+    });
+
+}
+
 generarNav();
+ponDatos();
