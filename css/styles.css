@@ -73,7 +73,7 @@ html, body{
 .section_cielo{
     /*height: 25%;*/
     /*background-color: #6fcbf2;*/
-    background: linear-gradient(#6fcbf2, #237cc0);
+    background: linear-gradient(#237cc0, #6fcbf2);
     padding: 25px;
     /*background-image: url("../img/agricultores.webp");
     background-size: cover;
@@ -81,7 +81,8 @@ html, body{
 }
 .seccion_tierra{
     /*height: 30%;*/
-    background-image: url("../img/fondo_tierra.png");
+    background: linear-gradient(#a15842, #5e3023);
+    /*background-image: url("../img/fondo_tierra.png");*/
     padding: 15px;
 }
 
@@ -98,13 +99,60 @@ html, body{
     }
 }
 
-
-.cajitaGuapa{
-    background-color: black;
-    color: white;
-    animation: shadowPulse 4s ease-in-out infinite;
+@keyframes moving {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(10px) scale(99%);
+    }
+    50% {
+        transform: translateX(0px) translate3d(0);
+    }
+    75% {
+        transform: translateX(-10px) scale(99%);
+    }
 }
 
+
+.cajitaGuapa{
+    /*background-color: black;*/
+    min-height: 100px;
+    color: white;
+    /*animation: shadowPulse 4s ease-in-out infinite;*/
+    background: black;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    position: relative;
+    margin: 50px auto 20px;
+
+    animation: moving 15s linear infinite;
+
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+
+}
+
+/* HTML: <div class="cloud"></div> */
+/*#cloud {
+	background: #f2f9fe;
+	background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -webkit-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -moz-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -ms-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -o-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	
+	position: relative;
+	margin: 120px auto 20px;
+}*/
 
 /* Hamburguesa */
 .menu-toggle {
