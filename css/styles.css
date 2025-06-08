@@ -136,7 +136,7 @@ html, body{
     min-height: 100px;
     color: white;
     /*animation: shadowPulse 4s ease-in-out infinite;*/
-    background: black;
+    background: rgb(10, 9, 58);
     border-radius: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
@@ -203,4 +203,17 @@ html, body{
   border-radius: 50%;
   opacity: 0.96;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+#contenedor_footer{
+    width: 100%;
+    text-align: center;
+    height: 15%;
+    background-color: black;
+}
+
+#contenedor_footer>p{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
 }

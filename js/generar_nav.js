@@ -64,5 +64,19 @@ function ponDatos(){
 
 }
 
+function generarFooter(){
+    const footie = document.getElementById("contenedor_footer");
+    if (footie === null){
+        return;
+    }
+    let br1 = document.createElement('br');
+    let pps = document.createElement('p');
+    pps.textContent = "Todos los derechos reservados a '" + nombreEmpresa + "'."
+
+    footie.appendChild(br1);
+    footie.appendChild(pps);
+}
+
 generarNav();
 ponDatos();
+generarFooter();
