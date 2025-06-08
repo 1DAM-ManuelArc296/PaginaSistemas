@@ -8,8 +8,17 @@ function hierba(){
     let hierba3 = document.createElement('img');
     let hierba4 = document.createElement('img');
     let hierba5 = document.createElement('img');
-    hierba.src = "img/grassie.png";
-    hierba.textContent = "Piss";
+    for (let i = 0; i < 5; i++) {
+        let hierbita = document.createElement('img');
+        hierbita.src = "img/grassie.png";
+        hierbita.style.width = "25%";
+        hierbita.style.left = (20 * i) + "%";
+        hierbita.id = "hierba";
+        hierbita.style.position = "absolute";
+        container.appendChild(hierbita)
+        hierba_generada.push(hierbita)
+    }
+    /*hierba.src = "img/grassie.png";
     hierba.style.width = "25%";
     hierba.style.left = "-2%";
     hierba.style.position = "absolute";
@@ -17,7 +26,6 @@ function hierba(){
     hierba_generada.push(hierba)
 
     hierba2.src = "img/grassie.png";
-    hierba2.textContent = "Piss";
     hierba2.style.width = "25%";
     hierba2.style.left = "20%";
     hierba2.style.position = "absolute";
@@ -25,7 +33,6 @@ function hierba(){
     hierba_generada.push(hierba2)
 
     hierba3.src = "img/grassie.png";
-    hierba3.textContent = "Piss";
     hierba3.style.width = "25%";
     hierba3.style.left = "40%";
     hierba3.style.position = "absolute";
@@ -33,7 +40,6 @@ function hierba(){
     hierba_generada.push(hierba3)
 
     hierba4.src = "img/grassie.png";
-    hierba4.textContent = "Piss";
     hierba4.style.width = "25%";
     hierba4.style.left = "60%";
     hierba4.style.position = "absolute";
@@ -41,12 +47,11 @@ function hierba(){
     hierba_generada.push(hierba4)
 
     hierba5.src = "img/grassie.png";
-    hierba5.textContent = "Piss";
     hierba5.style.width = "25%";
     hierba5.style.left = "80%";
     hierba5.style.position = "absolute";
     container.appendChild(hierba5)
-    hierba_generada.push(hierba5)
+    hierba_generada.push(hierba5)*/
 }
 function hierba_resize() {
     let container = document.getElementsByClassName("seccion_tierra")[0];
@@ -59,6 +64,7 @@ function hierba_resize() {
 }
 
 document.documentElement.style.overflowX = 'hidden';
+document.documentElement.scrollLeft = 0;
 
 window.addEventListener('load', hierba_resize);
 window.addEventListener('resize', hierba_resize);
@@ -66,3 +72,59 @@ window.addEventListener('scroll', hierba_resize)
 
 
 hierba();
+
+
+
+
+// Nubes
+const totalNubes = 15;
+
+function createCloud() {
+    const container = document.getElementsByClassName("section_cielo")[0];
+    const cloud = document.createElement('div');
+    cloud.classList.add('cloud');
+
+    // Esto es basicamente pa crear las partes de las nubes
+    const shapes = [
+        { width: 70, height: 70, left: 60, top: 10 },
+        { width: 50, height: 50, left: 100, top: 20 },
+        { width: 60, height: 60, left: 30, top: 20 },
+        { width: 40, height: 40, left: 80, top: 0 }
+    ];
+
+    shapes.forEach(shape => {
+        const part = document.createElement('div');
+        part.classList.add('cloud-part');
+        part.style.width = `${shape.width}px`;
+        part.style.height = `${shape.height}px`;
+        part.style.left = `${shape.left}px`;
+        part.style.top = `${shape.top}px`;
+        cloud.appendChild(part);
+    });
+
+    const topPos = Math.random() * (container.getBoundingClientRect().bottom);
+    const leftStart = -300 - Math.random() * 200;
+    const duration = 40 + Math.random() * 40; 
+    const scale = 0.5 + Math.random();
+
+    cloud.style.top = `${topPos}px`;
+    cloud.style.left = `${leftStart}px`;
+
+    cloud.animate(
+    [
+        { transform: `translateX(0) scale(${scale})` },
+        { transform: `translateX(${window.innerWidth + 400}px) scale(${scale})` }
+    ],
+    {
+        duration: duration * 1000,
+        iterations: Infinity,
+        easing: 'linear'  
+    }
+    );
+
+    container.appendChild(cloud);
+}
+
+for (let i = 0; i < totalNubes; i++) {
+  createCloud();
+}
