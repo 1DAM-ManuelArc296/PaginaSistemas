@@ -77,6 +77,25 @@ function generarFooter(){
     footie.appendChild(pps);
 }
 
+function rellena_grupos() {
+    const tabla_grupos = document.querySelector('[tabla_grupo_interes_interno]');
+    if (tabla_grupos === null || tabla_grupos === undefined){
+        return;
+    }
+    
+    for (const [key, value] of Object.entries(gruposInteresInternos)) {
+        let nombre_grupo = document.createElement("div");
+        let escrito_grupo = document.createElement("div");
+
+        nombre_grupo.textContent = key;
+        escrito_grupo.textContent = value;
+
+        tabla_grupos.appendChild(nombre_grupo);
+        tabla_grupos.appendChild(escrito_grupo);
+    }
+}
+
 generarNav();
 ponDatos();
+rellena_grupos();
 generarFooter();

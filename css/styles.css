@@ -114,7 +114,7 @@ html, body{
     }
 }
 
-@keyframes hierba {
+/*@keyframes hierba {
     0% {
         transform: skewX(0deg) translateX(-50px);
     }
@@ -124,10 +124,27 @@ html, body{
     100% {
         transform: skewX(0deg) translateX(-50px);
     }
+}*/
+@keyframes hierba {
+    0% {
+        transform: skewX(0deg) translateX(-50px);
+    }
+    25% {
+        transform: skewX(-25deg) translateX(-20px);
+    }
+    50% {
+        transform: skewX(0deg) translateX(-50px);
+    }
+    75% {
+        transform: skewX(25deg) translateX(-80px);
+    }
+    100% {
+        transform: skewX(0deg) translateX(-50px);
+    }
 }
 
 #hierba{
-    animation: hierba 15s linear infinite;
+    animation: hierba 25s ease infinite;
     z-index: 4;
 }
 
@@ -216,4 +233,21 @@ html, body{
     margin-top: auto;
     margin-bottom: auto;
     color: white;
+}
+
+.tabla_grupos_interes{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 25% auto ;
+}
+.tabla_grupos_interes>#head{
+    background-color: rgb(56, 56, 253);
+    
+}
+.tabla_grupos_interes div{
+    border: rgb(56, 56, 253) solid 1px;
+    margin: 0;
+    padding: 5px;
 }

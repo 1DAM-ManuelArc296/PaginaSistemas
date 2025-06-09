@@ -8,3 +8,9 @@ var enlacesNavbar = {
 };
 var smalliconpath = "img/potato_notext.png";
 var bigiconpath = "img/potato_text.png";
+
+var gruposInteresInternos = {
+    "Propietarios y accionistas" : "Estos necesitan que la empresa sea rentabla para poder seguir explotandola.",
+    "Empleados" : "Las acciones de la empresa afectan directamente al empleo de este grupo.",
+    "Comunidad local" : "La existencia de la empresa genera nuevos puestos de trabajo, tambien, las actividades de la empresa podrían dejar un impacto ambiental."
+}

@@ -3,11 +3,9 @@ let hierba_generada = []
 
 function hierba(){
     let container = document.getElementsByClassName("seccion_tierra")[0];
-    let hierba = document.createElement('img');
-    let hierba2 = document.createElement('img');
-    let hierba3 = document.createElement('img');
-    let hierba4 = document.createElement('img');
-    let hierba5 = document.createElement('img');
+    if (container === null || container === undefined){
+        return;
+    }
     for (let i = 0; i < 5; i++) {
         let hierbita = document.createElement('img');
         hierbita.src = "img/grassie.png";
@@ -18,43 +16,12 @@ function hierba(){
         container.appendChild(hierbita)
         hierba_generada.push(hierbita)
     }
-    /*hierba.src = "img/grassie.png";
-    hierba.style.width = "25%";
-    hierba.style.left = "-2%";
-    hierba.style.position = "absolute";
-    container.appendChild(hierba)
-    hierba_generada.push(hierba)
-
-    hierba2.src = "img/grassie.png";
-    hierba2.style.width = "25%";
-    hierba2.style.left = "20%";
-    hierba2.style.position = "absolute";
-    container.appendChild(hierba2)
-    hierba_generada.push(hierba2)
-
-    hierba3.src = "img/grassie.png";
-    hierba3.style.width = "25%";
-    hierba3.style.left = "40%";
-    hierba3.style.position = "absolute";
-    container.appendChild(hierba3)
-    hierba_generada.push(hierba3)
-
-    hierba4.src = "img/grassie.png";
-    hierba4.style.width = "25%";
-    hierba4.style.left = "60%";
-    hierba4.style.position = "absolute";
-    container.appendChild(hierba4)
-    hierba_generada.push(hierba4)
-
-    hierba5.src = "img/grassie.png";
-    hierba5.style.width = "25%";
-    hierba5.style.left = "80%";
-    hierba5.style.position = "absolute";
-    container.appendChild(hierba5)
-    hierba_generada.push(hierba5)*/
 }
 function hierba_resize() {
     let container = document.getElementsByClassName("seccion_tierra")[0];
+    if (container === null || container === undefined){
+        return;
+    }
     hierba_generada.forEach(hierba => {
         const rect = container.getBoundingClientRect();
         hierba.style.top = window.scrollY + rect.top - (hierba.height/2)-10 + 'px';
@@ -81,6 +48,9 @@ const totalNubes = 15;
 
 function createCloud() {
     const container = document.getElementsByClassName("section_cielo")[0];
+    if (container === null || container === undefined){
+        return;
+    }
     const cloud = document.createElement('div');
     cloud.classList.add('cloud');
 
