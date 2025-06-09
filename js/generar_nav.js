@@ -17,6 +17,9 @@ function generarNav(){
     let titulo = document.createElement("h1")
     titulo.textContent = nombreEmpresa;
     let img = document.createElement("img");
+    img.addEventListener('click', function () {
+        this.src = bigiconblushpath;
+    });
     img.src = bigiconpath;
     img.style.position = "relative";
     img.style.width = "88px";
@@ -77,7 +80,7 @@ function generarFooter(){
     footie.appendChild(pps);
 }
 
-function rellena_grupos() {
+function rellena_grupo_interno(){
     const tabla_grupos = document.querySelector('[tabla_grupo_interes_interno]');
     if (tabla_grupos === null || tabla_grupos === undefined){
         return;
@@ -93,6 +96,47 @@ function rellena_grupos() {
         tabla_grupos.appendChild(nombre_grupo);
         tabla_grupos.appendChild(escrito_grupo);
     }
+}
+function rellena_grupo_externo(){
+    const tabla_grupos = document.querySelector('[tabla_grupo_interes_externo]');
+    if (tabla_grupos === null || tabla_grupos === undefined){
+        return;
+    }
+    
+    for (const [key, value] of Object.entries(gruposInteresExterno)) {
+        let nombre_grupo = document.createElement("div");
+        let escrito_grupo = document.createElement("div");
+
+        nombre_grupo.textContent = key;
+        escrito_grupo.textContent = value;
+
+        tabla_grupos.appendChild(nombre_grupo);
+        tabla_grupos.appendChild(escrito_grupo);
+    }
+}
+
+function rellena_materialidad_ambiental(){
+    const tabla_grupos = document.querySelector('[tabla_analisis_materialidad_ambiental]');
+    if (tabla_grupos === null || tabla_grupos === undefined){
+        return;
+    }
+    
+    for (const [key, value] of Object.entries(analisisMaterialidadAmbiental)) {
+        let nombre_grupo = document.createElement("div");
+        let escrito_grupo = document.createElement("div");
+
+        nombre_grupo.textContent = key;
+        escrito_grupo.textContent = value;
+
+        tabla_grupos.appendChild(nombre_grupo);
+        tabla_grupos.appendChild(escrito_grupo);
+    }
+}
+
+function rellena_grupos() {
+    rellena_grupo_interno();
+    rellena_grupo_externo();
+    rellena_materialidad_ambiental();
 }
 
 generarNav();

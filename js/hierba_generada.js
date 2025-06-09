@@ -30,27 +30,12 @@ function hierba_resize() {
     });
 }
 
-document.documentElement.style.overflowX = 'hidden';
-document.documentElement.scrollLeft = 0;
-
-window.addEventListener('load', hierba_resize);
-window.addEventListener('resize', hierba_resize);
-window.addEventListener('scroll', hierba_resize)
-
-
-hierba();
-
-
-
-
 // Nubes
 const totalNubes = 15;
 
-function createCloud() {
-    const container = document.getElementsByClassName("section_cielo")[0];
-    if (container === null || container === undefined){
-        return;
-    }
+function creaNube() {
+    const container = document.getElementsByClassName("seccion_cielo")[0];
+
     const cloud = document.createElement('div');
     cloud.classList.add('cloud');
 
@@ -72,7 +57,7 @@ function createCloud() {
         cloud.appendChild(part);
     });
 
-    const topPos = Math.random() * (container.getBoundingClientRect().bottom);
+    const topPos = Math.random() * (container.getBoundingClientRect().bottom - (container.getBoundingClientRect().bottom * 0.05));
     const leftStart = -300 - Math.random() * 200;
     const duration = 40 + Math.random() * 40; 
     const scale = 0.5 + Math.random();
@@ -83,7 +68,7 @@ function createCloud() {
     cloud.animate(
     [
         { transform: `translateX(0) scale(${scale})` },
-        { transform: `translateX(${window.innerWidth + 400}px) scale(${scale})` }
+        { transform: `translateX(${window.innerWidth + 800}px) scale(${scale})` }
     ],
     {
         duration: duration * 1000,
@@ -95,6 +80,27 @@ function createCloud() {
     container.appendChild(cloud);
 }
 
-for (let i = 0; i < totalNubes; i++) {
-  createCloud();
+function creaTodasNubes(){
+    let nubes_a_generar = totalNubes;
+    const container = document.getElementsByClassName("seccion_cielo")[0];
+    if (container === null || container === undefined){
+        return;
+    }
+    if (container.hasAttribute("numero_nubes")){
+        nubes_a_generar = parseInt(container.getAttribute("numero_nubes"));
+    }
+    for (let i = 0; i < nubes_a_generar; i++) {
+        creaNube();
+    }
 }
+
+document.documentElement.style.overflowX = 'hidden';
+document.documentElement.scrollLeft = 0;
+
+window.addEventListener('load', hierba_resize);
+window.addEventListener('resize', hierba_resize);
+window.addEventListener('scroll', hierba_resize)
+
+
+hierba();
+creaTodasNubes();
