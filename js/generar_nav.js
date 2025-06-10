@@ -80,30 +80,13 @@ function generarFooter(){
     footie.appendChild(pps);
 }
 
-function rellena_grupo_interno(){
-    const tabla_grupos = document.querySelector('[tabla_grupo_interes_interno]');
+function rellena_tabla(str_identificador, diccionario){
+    const tabla_grupos = document.querySelector('['+str_identificador+']');
     if (tabla_grupos === null || tabla_grupos === undefined){
         return;
     }
     
-    for (const [key, value] of Object.entries(gruposInteresInternos)) {
-        let nombre_grupo = document.createElement("div");
-        let escrito_grupo = document.createElement("div");
-
-        nombre_grupo.textContent = key;
-        escrito_grupo.textContent = value;
-
-        tabla_grupos.appendChild(nombre_grupo);
-        tabla_grupos.appendChild(escrito_grupo);
-    }
-}
-function rellena_grupo_externo(){
-    const tabla_grupos = document.querySelector('[tabla_grupo_interes_externo]');
-    if (tabla_grupos === null || tabla_grupos === undefined){
-        return;
-    }
-    
-    for (const [key, value] of Object.entries(gruposInteresExterno)) {
+    for (const [key, value] of Object.entries(diccionario)) {
         let nombre_grupo = document.createElement("div");
         let escrito_grupo = document.createElement("div");
 
@@ -115,28 +98,15 @@ function rellena_grupo_externo(){
     }
 }
 
-function rellena_materialidad_ambiental(){
-    const tabla_grupos = document.querySelector('[tabla_analisis_materialidad_ambiental]');
-    if (tabla_grupos === null || tabla_grupos === undefined){
-        return;
-    }
-    
-    for (const [key, value] of Object.entries(analisisMaterialidadAmbiental)) {
-        let nombre_grupo = document.createElement("div");
-        let escrito_grupo = document.createElement("div");
-
-        nombre_grupo.textContent = key;
-        escrito_grupo.textContent = value;
-
-        tabla_grupos.appendChild(nombre_grupo);
-        tabla_grupos.appendChild(escrito_grupo);
-    }
-}
 
 function rellena_grupos() {
-    rellena_grupo_interno();
-    rellena_grupo_externo();
-    rellena_materialidad_ambiental();
+    rellena_tabla('tabla_grupo_interes_interno', gruposInteresInternos);
+    rellena_tabla('tabla_grupo_interes_externo', gruposInteresExterno);
+    rellena_tabla('tabla_analisis_materialidad_ambiental', analisisMaterialidadAmbiental);
+    rellena_tabla('tabla_analisis_materialidad_social', analisisMaterialidadSocial);
+    rellena_tabla('tabla_analisis_materialidad_economico', analisisMaterialidadEconomico);
+    rellena_tabla('tabla_analisis_materialidad_gubernamental', analisisMaterialidadGubernamental);
+    rellena_tabla('tabla_definicion_objetivos', definicionObjetivos);
 }
 
 generarNav();

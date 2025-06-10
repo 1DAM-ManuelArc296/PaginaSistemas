@@ -30,6 +30,10 @@ function hierba_resize() {
     });
 }
 
+function randBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 // Nubes
 const totalNubes = 15;
 
@@ -57,7 +61,9 @@ function creaNube() {
         cloud.appendChild(part);
     });
 
-    const topPos = Math.random() * (container.getBoundingClientRect().bottom - (container.getBoundingClientRect().bottom * 0.05));
+    //const topPos = Math.random() * (container.getBoundingClientRect().bottom - (container.getBoundingClientRect().bottom * 0.05));
+    // Deberia funcionar, pero las nubes se siguen llendo por donde les sale de...
+    const topPos = randBetween((container.getBoundingClientRect().bottom - (container.getBoundingClientRect().bottom * 0.05)), (container.getBoundingClientRect().top + (container.getBoundingClientRect().top * 0.05)));
     const leftStart = -300 - Math.random() * 200;
     const duration = 40 + Math.random() * 40; 
     const scale = 0.5 + Math.random();
