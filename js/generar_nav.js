@@ -104,7 +104,7 @@ function rellena_multitabla(str_identificador, diccionario_multi){
         return;
     }
     for (const [key, value] of Object.entries(diccionario_multi)) {
-        let nombre_grande = document.createElement("h3");
+        let nombre_grande = document.createElement("h2");
         nombre_grande.style.textAlign = "center";
         nombre_grande.style.fontFamily = "'Roboto', 'Arial Narrow Bold', sans-serif";
         nombre_grande.textContent = key;
