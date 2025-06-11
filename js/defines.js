@@ -49,9 +49,32 @@ var analisisMaterialidadGubernamental = {
 var definicionObjetivos = {
     "Reducir el uso de agua sin afectar la calidad" : "Queremos reducir el uso del agua en un 30% para el 2027.",
     "Cuidar de la tierra" : "Aparte de las técnicas de rotación de cultivos, empezaremos a aplicar técnicas regenerativas en el 100% de nuestras tierras para 2028.",
+    "Asegurar el empleo digno" : "Esperamos que para el 2026 podamos tener mejores condiciones de empleo.",
     "Fomentar el empleo rural" : "Esperamos que para el 2030, el 40% del personal contratado en cada campaña agrícola sea joven y local.",
     "Energía solar en nuestra operación" : "Instalar paneles solares en las instalaciones, y para el 2026 para cubrir el 50% de nuestro consumo energético.",
-    "Mantenerse al tanto con las normativas" : "Para este mismo año, otra vez queremos revisar nuestro cumplimiento de las normativas impuestas por el gobierno."
+    "Mantenerse al tanto con las normativas" : "Para este mismo año, otra vez queremos revisar nuestro cumplimiento de las normativas impuestas por el gobierno.",
+    "Modernización sostenible" : "Buscaremos modernizar aún más nuestras instalaciones gracias a ayudas y subvenciones."
+}
+
+var planDeAccion = {
+    "Reducir el uso de agua sin afectar la calidad" : {
+        "Implementación de sensores de humedad" : "Instalar sensores que indiquen cuándo realmente es necesario regar.",
+        "Riego por goteo inteligente" : "Sustituir gradualmente los sistemas tradicionales por riego por goteo automatizado."
+    },
+    "Cuidar de la tierra" : {
+        "Usar agentes biológicos" : "Fomentar el uso de agentes biológicos en vez de pesticidas no orgánicos.",
+        "Uso de pesticidas orgánicos" : "Investigar y testear pesticidas naturales con bajo impacto ambiental.",
+        "Uso de abonos y compost orgánico" : "Fomentaremos el uso interno de fertilización natural para devolver nutrientes al suelo."
+    },
+    "Asegurar el empleo digno" : {
+        "Evaluación de salarios y condiciones laborales" : "Compararemos salarios con el estándar del sector y condiciones de seguridad.", 
+        "Escucha a los trabajadores" : "Crear un comité para tratar temas laborales y sugerencias de mejora.",
+        "Programas de salud y bienestar" : "Ofrecer revisiones médicas anuales, apoyo psicológico, etc..."
+    },
+    "Fomentar el empleo rural" : {
+        "Inversión en infraestructuras locales" : "Crear programas de los que se puedan beneficiar los locales que nos llevan apoyando toda la vida.",
+        "Ofertas de empleo para la población local" : "Si priorizamos la contratación de residentes locales, hay una posibilidad de que familias se muevan a la comunidad local por el empleo."
+    }
 }
 
 

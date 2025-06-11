@@ -98,6 +98,49 @@ function rellena_tabla(str_identificador, diccionario){
     }
 }
 
+function rellena_multitabla(str_identificador, diccionario_multi){
+    const contenedor1 = document.querySelector('['+str_identificador+']');
+    if (contenedor1 === null || contenedor1 === undefined){
+        return;
+    }
+    for (const [key, value] of Object.entries(diccionario_multi)) {
+        let nombre_grande = document.createElement("h3");
+        nombre_grande.style.textAlign = "center";
+        nombre_grande.style.fontFamily = "'Roboto', 'Arial Narrow Bold', sans-serif";
+        nombre_grande.textContent = key;
+
+        let tabla = document.createElement("div");
+        tabla.style.paddingTop = "10px";
+        tabla.style.paddingLeft = "15px";
+        tabla.style.paddingRight = "15px";
+        tabla.style.paddingBottom = "28px";
+        tabla.classList.add("tabla_grupos_interes");
+
+        let tabla_key_desc = document.createElement("div");
+        tabla_key_desc.id = "head";
+        tabla_key_desc.textContent = "Accion";
+        let tabla_value_desc = document.createElement("div");
+        tabla_value_desc.id = "head";
+        tabla_value_desc.textContent = "Breve explicacion";
+
+        tabla.appendChild(tabla_key_desc);
+        tabla.appendChild(tabla_value_desc);
+
+        for (const [key2, value2] of Object.entries(value)) {
+            let nombre_grupo = document.createElement("div");
+            let escrito_grupo = document.createElement("div");
+
+            nombre_grupo.textContent = key2;
+            escrito_grupo.textContent = value2;
+
+            tabla.appendChild(nombre_grupo);
+            tabla.appendChild(escrito_grupo);
+        }
+
+        contenedor1.appendChild(nombre_grande);
+        contenedor1.appendChild(tabla);
+    }
+}
 
 function rellena_grupos() {
     rellena_tabla('tabla_grupo_interes_interno', gruposInteresInternos);
@@ -107,6 +150,7 @@ function rellena_grupos() {
     rellena_tabla('tabla_analisis_materialidad_economico', analisisMaterialidadEconomico);
     rellena_tabla('tabla_analisis_materialidad_gubernamental', analisisMaterialidadGubernamental);
     rellena_tabla('tabla_definicion_objetivos', definicionObjetivos);
+    rellena_multitabla('tabla_plan_accion', planDeAccion);
 }
 
 generarNav();
