@@ -74,6 +74,20 @@ var planDeAccion = {
     "Fomentar el empleo rural" : {
         "Inversión en infraestructuras locales" : "Crear programas de los que se puedan beneficiar los locales que nos llevan apoyando toda la vida.",
         "Ofertas de empleo para la población local" : "Si priorizamos la contratación de residentes locales, hay una posibilidad de que familias se muevan a la comunidad local por el empleo."
+    },
+    "Energía solar en nuestra operación" : {
+        "Hacer una evaluación energética" : "Medir cuánta electricidad estamos gastando e identificar qué apartados se pueden mejorar.",
+        "Instalación de paneles solares" : "Instalar más paneles solares para decrecer la dependencia de energías no renovables."
+    },
+    "Mantenerse al tanto con las normativas" : {
+        "Realizar un análisis normativo e identificar posibles errores" : "Así, estaremos seguros que cumplimos con todo lo que podemos mejorar como buena empresa responsable.",
+        "Plan de corrección y mejoras" : "Se ajustarán las partes que sean necesarias para cumplir con las normativas que se nos apliquen.",
+        "Cursos de capacitación sobre normativas" : "Se les impartirá a nuestros valiosos trabajadores unos cursos sobre normativas para asegurar que estas se respetan."
+    },
+    "Modernización sostenible" : {
+        "Identificación de ayudas disponibles y aplicables" : "Identificamos las ayudas y subvenciones a las que nos podamos presentar.",
+        "Postulación y seguimiento de convocatorias" : "Prepararemos los documentos que procedan para poder presentarlos a recibir ayudas.",
+        "Mejora de equipamiento e instalaciones" : "Con el dinero recibido de las ayudas que nos han sido aceptadas, mejoraremos las instalaciones y el equipamiento para poder seguir brindando calidad a su mesa."
     }
 }
 
