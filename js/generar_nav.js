@@ -1,4 +1,7 @@
 
+
+let clicks_icono = 0;
+
 function generarNav(){
     let header = document.getElementById("contenedor_navbar");
     if (header === null){
@@ -18,7 +21,10 @@ function generarNav(){
     titulo.textContent = nombreEmpresa;
     let img = document.createElement("img");
     img.addEventListener('click', function () {
-        this.src = bigiconblushpath;
+        clicks_icono++;
+        if (clicks_icono == 3){
+            this.src = bigiconblushpath;
+        }
     });
     img.src = bigiconpath;
     img.style.position = "relative";

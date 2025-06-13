@@ -101,4 +101,14 @@ document.addEventListener("keydown", (e) => {
         window.open(url, '_blank').focus();
         secret = "";
     }
+    else if (secret.includes("sostenibilidad")) {
+        let url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO8dNp1eUIYV-px8rJnfc8ETbfDUnkF8PQ5w&s";
+        window.open(url, '_blank').focus();
+        secret = "";
+    }
+    else if (secret.includes("galleta") || secret.includes("bake") ||secret.includes("cookie")) {
+        let url = "https://1dam-eliasgar491.github.io/index.html";
+        window.open(url, '_blank').focus();
+        secret = "";
+    }
 });
