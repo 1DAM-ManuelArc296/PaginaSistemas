@@ -249,13 +249,35 @@ html, body{
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: 25% auto ;
+    grid-template-columns: 35% auto ;
 }
 .tabla_grupos_interes>#head{
     background-color: rgb(56, 56, 253);
     
 }
 .tabla_grupos_interes div{
+    border: rgb(56, 56, 253) solid 1px;
+    margin: 0;
+    padding: 5px;
+}
+
+.tabla_grupos_indicadoresciifesg{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 80px auto auto;
+}
+.tabla_grupos_indicadoresciifesg>#head{
+    background-color: rgb(56, 56, 253);
+}
+.tabla_grupos_indicadoresciifesg>#bigone{
+    background-color: rgb(107, 107, 253);
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+.tabla_grupos_indicadoresciifesg div{
     border: rgb(56, 56, 253) solid 1px;
     margin: 0;
     padding: 5px;

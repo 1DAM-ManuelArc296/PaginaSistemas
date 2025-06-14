@@ -104,7 +104,7 @@ function rellena_tabla(str_identificador, diccionario){
     }
 }
 
-function rellena_multitabla(str_identificador, diccionario_multi){
+function rellena_multitabla(str_identificador, diccionario_multi, nombre_primera_columna = "Accion", nombre_segunda_columna = "Breve explicacion"){
     const contenedor1 = document.querySelector('['+str_identificador+']');
     if (contenedor1 === null || contenedor1 === undefined){
         return;
@@ -124,10 +124,10 @@ function rellena_multitabla(str_identificador, diccionario_multi){
 
         let tabla_key_desc = document.createElement("div");
         tabla_key_desc.id = "head";
-        tabla_key_desc.textContent = "Accion";
+        tabla_key_desc.textContent = nombre_primera_columna;
         let tabla_value_desc = document.createElement("div");
         tabla_value_desc.id = "head";
-        tabla_value_desc.textContent = "Breve explicacion";
+        tabla_value_desc.textContent = nombre_segunda_columna;
 
         tabla.appendChild(tabla_key_desc);
         tabla.appendChild(tabla_value_desc);
@@ -148,6 +148,45 @@ function rellena_multitabla(str_identificador, diccionario_multi){
     }
 }
 
+function rellena_multitabla_ciifesg(str_identificador, diccionario_multi){
+    const contenedor1 = document.querySelector('['+str_identificador+']');
+    if (contenedor1 === null || contenedor1 === undefined){
+        return;
+    }
+    let tabla_pilar = document.createElement("div");
+    tabla_pilar.id = "head";
+    tabla_pilar.textContent = "Pilar";
+    let tabla_kpi = document.createElement("div");
+    tabla_kpi.id = "head";
+    tabla_kpi.textContent = "KPI (Indicador Clave de Desempeño)";
+    let tabla_unidad = document.createElement("div");
+    tabla_unidad.id = "head";
+    tabla_unidad.textContent = "Unidad de medida";
+
+    contenedor1.appendChild(tabla_pilar);
+    contenedor1.appendChild(tabla_kpi);
+    contenedor1.appendChild(tabla_unidad);
+    for (const [key, value] of Object.entries(diccionario_multi)) {
+        let nomgrupo = document.createElement("div");
+        nomgrupo.textContent = "Indicadores " + key;
+        nomgrupo.id = "bigone";
+        contenedor1.appendChild(nomgrupo);
+        for (const valdos of (value)) {
+            let pilar = document.createElement("div");
+            let kpi = document.createElement("div");
+            let unidadmedida = document.createElement("div");
+
+            pilar.textContent = valdos["Pilar"]
+            kpi.textContent = valdos["KPI"]
+            unidadmedida.textContent = valdos["Unidad"]
+
+            contenedor1.appendChild(pilar);
+            contenedor1.appendChild(kpi);
+            contenedor1.appendChild(unidadmedida);
+        }
+    }
+}
+
 function rellena_grupos() {
     rellena_tabla('tabla_grupo_interes_interno', gruposInteresInternos);
     rellena_tabla('tabla_grupo_interes_externo', gruposInteresExterno);
@@ -157,6 +196,8 @@ function rellena_grupos() {
     rellena_tabla('tabla_analisis_materialidad_gubernamental', analisisMaterialidadGubernamental);
     rellena_tabla('tabla_definicion_objetivos', definicionObjetivos);
     rellena_multitabla('tabla_plan_accion', planDeAccion);
+    rellena_multitabla('tabla_indicadores', indicadores, "Indicador", "Unidad de medida");
+    rellena_multitabla_ciifesg('tabla_indicadores_ciifesg', indicadores_ciifesg)
 }
 
 generarNav();

@@ -91,6 +91,182 @@ var planDeAccion = {
     }
 }
 
+var indicadores = {
+    "Reducir el uso de agua sin afectar la calidad" : {
+        "Reducción en consumo de agua" : "%",
+        "Superficie con sensores de humedad instalados" : "%",
+        "Superficie con riego por goteo inteligente" : "%"
+    },
+    "Cuidar de la tierra" : {
+        "Reducción de uso de pesticidas no orgánicos" : "%",
+        "Compost producido mensualmente" : "Kg",
+        "Uso de la fertilizacion natural" : "% de fertilización mensual"
+    },
+    "Asegurar el empleo digno" : {
+        "Encuestas de satisfacción laboral" : "Media en escala del 1 al 10",
+        "Empleados con capacidad de atender a los programas de salud y bienestar" : "%",
+        "Reuniones del comité laboral realizadas" : "Numero mensual"
+    },
+    "Fomentar el empleo rural" : {
+        "Programas existentes que beneficien a los locales" : "Número anual",
+        "Ofertas de empleos generadas para locales" : "Número anual"
+    },
+    "Energía solar en nuestra operación" : {
+        "Energía proveniente de paneles solares" : "% del consumo total anual",
+        "Número de paneles solares instalados" : "Numero anual",
+        "Eficiencia energética de nuestras facilidades" : "%"
+    },
+    "Mantenerse al tanto con las normativas" : {
+        "Cumplimiento normativo" : "%",
+        "Trabajadores que han recibido un curso de capacitación sobre normativas" : "%"
+    },
+    "Modernización sostenible" : {
+        "Subvenciones solicitadas" : "Numero anual",
+        "Subvenciones aprobadas" : "Numero anual",
+        "Mejoras en el equipamiento e instalaciones" : "%"
+    }
+}
+
+var indicadores_ciifesg = {
+    "Financieros" : [
+        {
+            "Pilar" : "F1",
+            "KPI" : "Ingresos anuales por venta de patatas",
+            "Unidad" : "€"
+        },
+        {
+            "Pilar" : "F2",
+            "KPI" : "Gasto en proveedores",
+            "Unidad" : "€"
+        },
+        {
+            "Pilar" : "F4",
+            "KPI" : "Remuneración a empleados",
+            "Unidad" : "€"
+        },
+        {
+            "Pilar" : "F8",
+            "KPI" : "Impuesto sobre los beneficios",
+            "Unidad" : "%"
+        },
+        {
+            "Pilar" : "F11",
+            "KPI" : "Inversión I+D+i",
+            "Unidad" : "€"
+        },
+        {
+            "Pilar" : "F12",
+            "KPI" : "Inversión total",
+            "Unidad" : "€"
+        },
+        {
+            "Pilar" : "F16",
+            "KPI" : "Subvenciones recibidas",
+            "Unidad" : "€"
+        },
+        {
+            "Pilar" : "F17",
+            "KPI" : "Inversión ambientalmente sostenible",
+            "Unidad" : "€"
+        },
+        {
+            "Pilar" : "F18",
+            "KPI" : "Inversión socialmente responsable",
+            "Unidad" : "€"
+        }
+    ],
+    "Ambientales" : [
+        {
+            "Pilar" : "E1",
+            "KPI" : "Consumo de energía",
+            "Unidad" : "kWh"
+        },
+        {
+            "Pilar" : "E1/F1",
+            "KPI" : "Intensidad energética",
+            "Unidad" : "kWh/€"
+        },
+        {
+            "Pilar" : "E2",
+            "KPI" : "Consumo de agua",
+            "Unidad" : "M³"
+        },
+        {
+            "Pilar" : "E2/F1",
+            "KPI" : "Intensidad de agua",
+            "Unidad" : "M³/€"
+        },
+        {
+            "Pilar" : "E8",
+            "KPI" : "Residuos gestionados",
+            "Unidad" : "t"
+        },
+        {
+            "Pilar" : "E9",
+            "KPI" : "Residuos reutilizados",
+            "Unidad" : "t"
+        }
+    ],
+    "Sociales" : [
+        {
+            "Pilar" : "S1",
+            "KPI" : "Empleados",
+            "Unidad" : "Numero de empleados"
+        },
+        {
+            "Pilar" : "S2",
+            "KPI" : "Diversidad de género",
+            "Unidad" : "% de empleadas"
+        },
+        {
+            "Pilar" : "S5",
+            "KPI" : "Estabilidad laboral",
+            "Unidad" : "% de contratos fijos"
+        },
+        {
+            "Pilar" : "S10",
+            "KPI" : "Absentismo",
+            "Unidad" : "Media de días de absentismo por trabajador"
+        },
+        {
+            "Pilar" : "S12",
+            "KPI" : "Creación neta de empleo",
+            "Unidad" : "Creación neta de empleo"
+        },
+        {
+            "Pilar" : "S14",
+            "KPI" : "Formación de empleados",
+            "Unidad" : "Media de horas de formación por empleado al año"
+        }
+    ],
+    "Gobierno Corporativo" : [
+        {
+            "Pilar" : "CG1",
+            "KPI" : "Consejeros",
+            "Unidad" : "Número de consejeros"
+        },
+        {
+            "Pilar" : "CG3",
+            "KPI" : "Consejeros en material de Responsabilidad Social Corporativa (RSC)",
+            "Unidad" : "% de consejeros que se dedican a RSC"
+        },
+        {
+            "Pilar" : "CG7",
+            "KPI" : "Reuniones del consejo",
+            "Unidad" : "Número de reuniones hechas en un año"
+        },
+        {
+            "Pilar" : "CG9",
+            "KPI" : "Diversidad de género en el consejo",
+            "Unidad" : "% de mujeres pertenecientes al consejo"
+        },
+        {
+            "Pilar" : "CG10",
+            "KPI" : "Casos de corrupción/soborno",
+            "Unidad" : "Número de casos de corrupción o soborno identificados."
+        }
+    ]
+}
 
 // EASTER EGG!!!! DELTARUNE CAPITULOS 3-4 SALIERON YA DESPUES DE 2 AÑOS
 let secret = "";
