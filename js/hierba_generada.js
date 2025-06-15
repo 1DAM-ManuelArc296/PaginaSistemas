@@ -34,6 +34,16 @@ function randBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function playsoundnube(){
+    var audioplayer = document.getElementById("generalaudio");
+    if (audioplayer === null ){
+        return;
+    }
+    audioplayer.src = "aud/splat.wav"
+    audioplayer.play();
+
+}
+
 // Nubes
 const totalNubes = 15;
 
@@ -58,6 +68,7 @@ function creaNube() {
         part.style.height = `${shape.height}px`;
         part.style.left = `${shape.left}px`;
         part.style.top = `${shape.top}px`;
+        part.addEventListener('click', playsoundnube);
         cloud.appendChild(part);
     });
 
@@ -87,6 +98,10 @@ function creaNube() {
 }
 
 function creaTodasNubes(){
+    const audioplayer = document.createElement("audio");
+    audioplayer.id = "generalaudio";
+    document.body.appendChild(audioplayer);
+
     let nubes_a_generar = totalNubes;
     const container = document.getElementsByClassName("seccion_cielo")[0];
     if (container === null || container === undefined){

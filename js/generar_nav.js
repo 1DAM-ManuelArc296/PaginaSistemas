@@ -22,8 +22,23 @@ function generarNav(){
     let img = document.createElement("img");
     img.addEventListener('click', function () {
         clicks_icono++;
-        if (clicks_icono == 3){
+        if (clicks_icono == 1){
             this.src = bigiconblushpath;
+        }
+        else if (clicks_icono == 2){
+            this.src = "img/potato_text_nocadena.png";
+        }
+        else if (clicks_icono == 3){
+            this.src = "img/potato_text_nocirculo.png";
+        }
+        else if (clicks_icono == 4){
+            this.src = "img/potato_text_nopatata.png";
+        }
+        else if (clicks_icono == 5){
+            this.src = "img/potato_text_no.png";
+        }
+        else if (clicks_icono == 6){
+            this.style.display = "None";
         }
     });
     img.src = bigiconpath;

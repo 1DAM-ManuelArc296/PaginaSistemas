@@ -287,4 +287,9 @@ document.addEventListener("keydown", (e) => {
         window.open(url, '_blank').focus();
         secret = "";
     }
+    else if (secret.includes("lancer")) {
+        let url = "https://static.wikia.nocookie.net/ad9eeb6a-5751-4aac-b4c7-a6459f443a93/scale-to-width/100";
+        window.open(url, '_blank').focus();
+        secret = "";
+    }
 });
